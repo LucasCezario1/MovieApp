@@ -1,0 +1,88 @@
+parei em 14:11
+
+
+parei 27:13
+
+parei: 38:47
+
+import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
+
+// Inside of a component's render() method:
+render() {
+  return (
+    <HeaderImageScrollView
+      maxHeight={200}
+      minHeight={MIN_HEIGHT}
+      headerImage={require("../../assets/NZ.jpg")}
+      renderForeground={() => (
+        <View style={{ height: 150, justifyContent: "center", alignItems: "center" }} >
+          <TouchableOpacity onPress={() => console.log("tap!!")}>
+            <Text style={{ backgroundColor: "transparent" }}>Tap Me!</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    >
+      <View style={{ height: 1000 }}>
+        <TriggeringView onHide={() => console.log("text hidden")}>
+          <Text>Scroll Me!</Text>
+        </TriggeringView>
+      </View>
+    </HeaderImageScrollView>
+  );
+}
+
+parei 30 min
+
+
+
+
+
+
+
+
+
+
+
+
+ render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <StatusBar barStyle="light-content" />
+        <HeaderImageScrollView
+          maxHeight={MAX_HEIGHT}
+          minHeight={MIN_HEIGHT}
+          maxOverlayOpacity={0.6}
+          minOverlayOpacity={0.3}
+          fadeOutForeground
+          renderHeader={() => <Image source={tvShowContent.image} style={styles.image} />}
+          renderFixedForeground={() => (
+            <Animatable.View
+              style={styles.navTitleView}
+              ref={navTitleView => {
+                this.navTitleView = navTitleView;
+              }}
+            >
+              <Text style={styles.navTitle}>
+                {tvShowContent.title}, ({tvShowContent.year})
+              </Text>
+            </Animatable.View>
+          )}
+          renderForeground={() => (
+            <View style={styles.titleContainer}>
+              <Text style={styles.imageTitle}>{tvShowContent.title}</Text>
+            </View>
+          )}
+        >
+        </HeaderImageScrollView>
+      </View>
+    );
+
+
+
+
+
+
+
+
+
+
